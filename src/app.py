@@ -5,14 +5,14 @@ import numpy as np
 from PIL import Image
 
 # Cargar el modelo de TensorFlow previamente entrenado.
-model = 0 # tf.keras.models.load_model('ruta_del_modelo')
+model = tf.keras.models.load_model("./models/model.h5")
 
 # Función para predecir la clase de una imagen.
 def predict_image_class(image):
 
     # Preprocesar la imagen según los requisitos del modelo.
     image = np.array(image)
-    image = tf.image.resize(image, (224, 224))
+    image = tf.image.resize(image, (128, 128))
     image = (image / 255.0)
 
     # Realizar la predicción.
