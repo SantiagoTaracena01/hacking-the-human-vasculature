@@ -94,8 +94,11 @@ if (uploaded_image is not None):
     # Realizar la predicción.
     class_index = predict_image_class(image)
 
+    # Diccionario de clases.
+    classes = ["Renal Cortex", "Renal Medulla", "Renal Papilla"]
+
     # Muestra la clase predicha.
-    st.write(f"Clase predicha: {class_index}")
+    st.write(f"Clase predicha: {classes[class_index]}")
 
     # Generar gráficos exploratorios.
     generate_image_plots(image)
